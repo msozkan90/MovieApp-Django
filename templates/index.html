@@ -1,0 +1,96 @@
+
+{% extends 'layout.html' %}
+{% load static %}
+{% block css_files %}
+<style>
+
+
+</style>
+
+{% endblock %}
+{% block body %} 
+<br>
+<br>
+<div class="container">
+<h3>Home Page</h3>
+
+<div class="col-md-6" >
+
+
+        <a class="card-link" href="" id="adv">  <img class="card-img-top" id="adv" src="" alt=""></a>
+
+ 
+
+     </div> 
+</div>
+<br><br>
+
+
+
+
+
+    
+
+{% endblock  %}
+
+
+{% block js_files %}
+<script>
+var adv=[
+	{
+		image :"https://m.media-amazon.com/images/M/MV5BMDNkOTE4NDQtMTNmYi00MWE0LWE4ZTktYTc0NzhhNWIzNzJiXkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_.jpg",
+		link : "",
+	},
+	{
+		image : "https://m.media-amazon.com/images/M/MV5BOWNlMjBjZTUtNThiNy00OTkxLThiZTQtNTEyZDliZTM3N2Q0XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_FMjpg_UX1000_.jpg",
+		link : "",
+	},
+	{
+		image : "https://upload.wikimedia.org/wikipedia/tr/1/1f/Kurtlar-vadisi-eski.jpg",
+		link : "",
+	},
+	{
+		image :"https://m.media-amazon.com/images/M/MV5BZDZjY2I5ZjEtZGE2MS00ZjRmLTlmMGEtMDQ5ZmZhZWJjYzk3XkEyXkFqcGdeQXVyNDg4MjkzNDk@._V1_.jpg",
+		link :"",
+	},
+]
+
+var index = 1;
+var slaytCount = adv.length;
+var interval;
+
+var settings={
+	duration:"2500"
+}
+init(settings);
+function init(settings){
+	interval=setInterval(function(){
+	if(slaytCount == index+1){
+		index = -1;
+	}
+	showSlide(index);
+
+	index++;
+showSlide(index);
+},settings.duration)
+}
+
+
+
+function showSlide(i){
+	index=i;
+	if (i<0) {
+        index = slaytCount - 1;
+    }
+    if(i >= slaytCount){
+        index =0;
+    }
+	document.querySelector('.card-img-top').setAttribute('src',adv[index].image);
+	document.querySelector('.card-link').setAttribute('href',adv[index].link);
+}
+</script>
+{% endblock %}
+
+
+
+

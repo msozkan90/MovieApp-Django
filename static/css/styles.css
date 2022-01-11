@@ -1,0 +1,55 @@
+
+body{
+  position: relative;
+  background-color: #171A21;
+  color: aliceblue;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.box-element {
+    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+    background-color: rgb(167, 155, 117);
+    border-radius: 5px;
+    padding: 10px;
+    
+  }
+  
+.thumbnail {
+    border-radius: 5px;
+    width: 100%;
+    height: 320px;
+    -webkit-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+    -moz-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+    box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+  }
+.product2 {
+    border-radius: 0 0 4px 4px;
+  }
+.col-lg-4,
+.col-lg-6,
+.col-lg-8,
+.col-lg-12 {
+    margin-top: 10px;
+  }
+.film_card{
+    display: inline-block;
+    width: 250px;
+}
+.movie_detail{
+  padding-top: 0%;
+  width: 1200px;
+  height: 500px;
+  border-radius: 7px;
+}
+.movie_info{
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  background-color: rgb(29, 29, 29);
+  color: white;
+  padding: 35px;
+  border-radius: 10px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}

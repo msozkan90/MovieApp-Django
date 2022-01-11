@@ -1,0 +1,211 @@
+
+{% extends 'layout.html' %}
+{% load static %}
+<style>
+.row{
+    -webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: transparent;
+font-family: 'Be Vietnam',sans-serif;
+font-size: .85rem;
+font-weight: 400;
+line-height: 1.5;
+color: #858796;
+text-align: left;
+box-sizing: border-box;
+display: flex;
+flex-wrap: wrap;
+margin-right: -.75rem;
+margin-left: -.75rem;
+  }
+.col-xl-3{
+    -webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: transparent;
+font-family: 'Be Vietnam',sans-serif;
+font-size: .85rem;
+font-weight: 400;
+line-height: 1.5;
+color: #858796;
+text-align: left;
+box-sizing: border-box;
+position: relative;
+width: 100%;
+padding-right: .75rem;
+padding-left: .75rem;
+flex: 0 0 25%;
+max-width: 25%;
+margin-bottom: 1.5rem!important;
+background-color: rgb(22, 19, 19)!important;
+}
+.card{
+    -webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: transparent;
+font-family: 'Be Vietnam',sans-serif;
+font-size: .85rem;
+font-weight: 400;
+line-height: 1.5;
+color: #858796;
+text-align: left;
+box-sizing: border-box;
+position: relative;
+display: flex;
+flex-direction: column;
+min-width: 0;
+word-wrap: break-word;
+background-color: rgb(22, 19, 19)!important;
+background-clip: border-box;
+border-radius: .35rem;
+border: 0!important;
+box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+}
+.m-card-cover{
+    -webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: transparent;
+font-family: 'Be Vietnam',sans-serif;
+font-size: .85rem;
+font-weight: 400;
+line-height: 1.5;
+text-align: left;
+word-wrap: break-word;
+color: #4e73df;
+box-sizing: border-box;
+
+}
+.love-box{
+    -webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: transparent;
+font-family: 'Be Vietnam',sans-serif;
+font-size: .85rem;
+font-weight: 400;
+line-height: 1.5;
+word-wrap: break-word;
+color: #4e73df;
+box-sizing: border-box;
+/* background-color: #fff!important; */
+border-radius: .35rem!important;
+position: absolute!important;
+box-shadow: 0 .125rem .25rem 0 rgba(58,59,69,.2)!important;
+margin: .5rem!important;
+text-align: center!important;
+}
+.card-img-top{
+    -webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: transparent;
+font-family: 'Be Vietnam',sans-serif;
+font-size: .85rem;
+font-weight: 400;
+line-height: 1.5;
+text-align: left;
+word-wrap: break-word;
+color: #4e73df;
+box-sizing: border-box;
+vertical-align: middle;
+border-style: none;
+width: 100%;
+border-top-left-radius: calc(.35rem - 1px);
+border-top-right-radius: calc(.35rem - 1px);
+}
+#card-body{
+    -webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: transparent;
+font-family: 'Be Vietnam',sans-serif;
+font-size: .85rem;
+font-weight: 400;
+line-height: 1.5;
+text-align: left;
+word-wrap: break-word;
+color: #4e73df;
+box-sizing: border-box;
+flex: 1 1 auto;
+padding: 1rem!important;
+background-color: rgb(22, 19, 19)!important;
+    border: 2px black solid!important;
+}
+#wrapper{
+    -webkit-text-size-adjust: 100%;
+-webkit-tap-highlight-color: transparent;
+font-family: 'Be Vietnam',sans-serif;
+font-size: .85rem;
+font-weight: 400;
+line-height: 1.5;
+color: #858796;
+text-align: left;
+box-sizing: border-box;
+display: flex;
+}
+#card-body2{
+    background-color: rgb(22, 19, 19)!important;
+    border: 2px black solid!important;
+}
+#textt{
+    color: blanchedalmond;
+    text-decoration-color: blanchedalmond;
+}
+</style>
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
+{% block body %} 
+
+<div class="container " >
+    <br><br>
+    <h3>Movies</h3>
+<hr>
+    <div id="wrapper">
+        <div class="row">
+            {% for rate in  film_list %}
+       
+            
+            
+          <div class="col-xl-3 col-md-6 mb-4" id="card-body2">
+
+            <div class="card m-card shadow border-0 card-text" style="background-color: rgb(155 14 14)!important;" >
+                <a id="image" href="{{rate.title.slug}}"  style="text-decoration: none!important;"> 
+                <div class="m-card-cover">
+                <div class="position-absolute bg-white shadow-sm rounded text-center p2 m-2 love-box">
+                  <h6 class="text-gray-900 mb-0 font-weight-bold">
+          
+
+                    <i class="fas fa-heart text-danger"></i> {{rate.avg_rate}}
+              
+                  </h6>
+                 
+                  <small class="text-muted"></small>
+                </div>
+                <img class="thumbnail"  src="{% static  rate.title.imageURL %}">
+                </div>
+                <div id="card-body" class="p-3" >
+                <h5 class="card-title  mb-1" id="textt" style="color: #FFC107;">
+                    {{rate.title.title}}
+                </h5>
+                <p class="card-body2" id="card-text">
+                  <small  style="color: #FFC107;">{{rate.title.category.all.0}}</small>
+                  <br>
+                  <small class="text-warning">
+                    <i class="fas fa-calendar-alt fa-sm text-gray-400"></i>{{rate.title.date_added.year}}
+                  </small>
+                </p>
+                </div>
+                </a>
+                </div>
+                    </div>
+
+       
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock  %}
+
+{% block js_files %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
+
+
+

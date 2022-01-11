@@ -1,0 +1,127 @@
+
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'css/styless1.css' %}">
+
+<style>
+#image{
+    height: 100px;
+    width: 80px;
+}
+.name_list{
+    padding-top: 50px;
+}
+.starbar1{
+color: #E2B616;
+border: #E2B616 2px solid;
+
+}
+.starbar{
+color: #E2B616;
+
+
+}
+.starbar :hover{
+  color: #E2B616;
+  fill: #E2B616;
+}
+
+
+
+
+
+</style>
+{% endblock %}
+{% block body %} 
+
+<div class="container">
+
+
+{% for film in  films %}
+
+        <div class="col-lg-4 mb-3 film_card " >
+          <a id="image" href="">
+          <div class="m-card-cover">
+            <img class="movie_detail"   src="{% static  film.imageURL %}">
+          </div>
+        </a> 
+        </div>
+
+
+
+    <div class="movie_info" id="movie_info">
+    <h6><strong>{{film.title}}</strong></h6>
+    <h6><strong>Rates:{{film.rate}}</strong></h6>
+    <h6><strong>Category: {{film.category.all.0}}</strong></h6>
+    <div class="rating_rate"> <h6><strong>Rating  </strong>  <i class="fas fa-star "></i><div  id="rating_value">{{rate_avg}}</div>( {{length}} )</h6>
+     <h6 id="rating_total"></h6></div>
+    <br>
+    <h6><strong>Rate </strong></h6>
+      
+    <a href="#"  class="starbar" data-product="1" data-film="{{film.title}}"  data-user="{{user}}" data-rate="{{rate_avg}}"> <i class="far fa-star" ></i></a>
+    <a href="#"  class="starbar" data-product="2" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
+    <a href="#"  class="starbar" data-product="3" data-film="{{film.title}}"  data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
+    <a href="#"  class="starbar" data-product="4" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
+    <a href="#"  class="starbar" data-product="5" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
+    <a href="#"  class="starbar" data-product="6" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
+    <a href="#"  class="starbar" data-product="7" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
+    <a href="#"  class="starbar" data-product="8" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star" ></i></a>
+    <a href="#"  class="starbar" data-product="9" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star" ></i></a>
+    <a href="#"  class="starbar" data-product="10" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star" ></i></a>
+
+
+      </div>
+{% endfor %}
+</div>
+
+
+<div class="container">
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">CAST</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for film in  films %}
+        {% for actor_list in  actor_lists %}
+       
+        
+
+
+        <tr class="name_list">
+          
+          <th > <a id="image" href="{% url 'moviess:actors_detail' actor_list.slug %}"> <img class="thumbnail" id="image"   src="{% static  actor_list.imageURL %}"></a></th>
+          <td>{{actor_list.name}}</td>
+          <td>{{actor_list.age}}</td>
+          <td>{{actor_list.gender}}</td>
+        </tr>
+       
+    
+        {% endfor %} 
+        {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+{% endblock  %}
+
+{% block js_files %}
+<script src="{% static 'js/script12.js' %}"></script>
+<script src="https://kit.fontawesome.com/ba6614497d.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% for actor in  actors %}
+<tr class="name_list">
+  
+  <th > <a id="image" href="{{actor.slug}}"> <img class="thumbnail" id="image"   src="{% static  actor.imageURL %}"></a></th>
+  <td>{{actor.name}}</td>
+  <td>{{actor.age}}</td>
+  <td>{{actor.gender}}</td>
+</tr>
+{% endfor %}

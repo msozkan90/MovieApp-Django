@@ -1,0 +1,115 @@
+
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<style>
+
+.actor_detail{
+    background-color: rgba(255, 215, 223, 0.651);
+    display: inline-block;
+    padding:100px;
+    padding-top: 10px;
+    width: 1000px;
+    margin-left: 300px;
+    height: 500px;
+    border-radius: 5px;
+   
+}
+
+#actor_card{
+    background-color: rgb(218, 217, 216);
+    position: relative !important;
+    max-width: 1200px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+#images{
+    width: 300px;
+    height: 500px;
+    position: absolute;
+    top: 175px;
+    border: black 1px solid;
+    border-radius: 5px;
+   
+
+}
+#image{
+    height: 100px;
+    width: 80px;
+}
+    </style>
+{% endblock %}
+{% block body %} 
+
+<div class="container">
+    <br> 
+    <h3>Actors</h3>
+
+{% for actor in  actors %}
+   
+    <div class=" film_card" >
+            <a  href=""> <img class="" id="images" src="{% static  actor.imageURL %}"></a> 
+        </div>
+        <div class="actor_detail">
+                <h5><strong>{{actor.name}}</strong></h5>
+                <br>
+                <h5><strong>Age:{{actor.age}}</strong></h5>
+                <br>
+                <h5><strong>Gender: {{actor.gender}}</strong></h5>
+                <br>
+                <h5 class="deneme"><strong>Biography: {{actor.biography}}</strong></h5>
+                <br>
+
+                
+                
+        </div>     
+         
+        <br>
+        <br><br><br>
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Title</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Gender</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for films_list in  films_lists %}
+               
+        
+                <tr class="name_list">
+                  
+                  <th > <a id="image" href="{% url 'moviess:movies_detail' films_list.slug %}"> <img class="thumbnail" id="image"   src="{% static  films_list.imageURL %}"></a></th>
+                  <td>{{films_list.title}}</td>
+                 
+                  <td>{{films_list.rate}}</td>
+                  <td></td>
+                </tr>
+             
+                {% endfor %}
+        
+            </tbody>
+          </table>     
+         
+
+
+
+
+{% endfor %}
+</div>
+
+
+
+
+
+
+
+{% endblock  %}
+
+{% block js_files %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,141 @@
+
+.box-element {
+    box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+    background-color: rgb(167, 155, 117);
+    border-radius: 5px;
+    padding: 10px;
+    
+  }
+  
+.thumbnail {
+    border-radius: 5px;
+    width: 100%;
+    height: 320px;
+    -webkit-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+    -moz-box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+    box-shadow: -1px -3px 5px -2px rgba(214, 214, 214, 1);
+  }
+.product2 {
+    border-radius: 0 0 4px 4px;
+  }
+.col-lg-4,
+.col-lg-6,
+.col-lg-8,
+.col-lg-12 {
+    margin-top: 10px;
+  }
+.film_card{
+    display: inline-block;
+    width: 250px;
+}
+.movie_detail{
+  padding-top: 0%;
+  width: 1200px;
+  height: 500px;
+  border-radius: 7px;
+}
+#movie_info{
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  background-color: rgb(29, 29, 29);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+form.register {
+  margin-left: 300px;
+}
+#form-control {
+  border: solid black 1.5px;
+  box-shadow: hsl(0, 0%, 80%) 0 0 16px;
+  background-color: rgb(253, 242, 242);
+  border-radius: 3px;
+  padding: 0px;
+  position: relative;
+  height: 780px;
+}
+#r-button {
+  width: 55%;
+  margin-top: 20px;
+  position: absolute;
+  left: 350px;
+  border-radius: 5px;
+}
+.r_form {
+  padding-left: 55px;
+}
+div.bg-warning {
+  margin: 0px;
+  padding: 0px;
+  height: 40px;
+  text-align: center;
+}
+.form-inline {
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 6px;
+}
+.btn-warning {
+  margin-bottom: 4px;
+  margin-right: 4px;
+  border-radius: 5px;
+}
+
+form label {
+  display: block;
+  font-weight: 900;
+  font-size: 16px;
+
+  margin-left: 10px;
+}
+form input {
+  width: 450px;
+  height: 40px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+form span {
+  opacity: 0.5;
+  margin-left: 10px;
+}
+form li {
+  opacity: 0.5;
+  margin-left: 10px;
+}
+#messages {
+  padding: 15px;
+  font-size: 18px !important;
+}
+#navbarNavDropdown{
+  float: left !important;
+}
+.nav-but{
+  width: 80px;
+  height: 45px;
+  background-color: #087637;
+  border: 2px solid black;
+  border-radius: 4px;
+  text-align: center;
+  color: aliceblue;
+}
+
+#nav-but:hover{
+
+  opacity: 0.8;
+
+  border:   #087637!important;
+  background-color: rgb(255, 255, 255);
+  color: #087637!important;
+}
+
+#adv{
+  position: absolute;
+  left: 135px;
+  min-width: 600px!important;
+  min-height: 800px!important;
+  max-width: 600px!important;
+  max-height: 800px!important;
+}

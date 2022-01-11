@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand ml-3 " href="/">MOVIES</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active ml-3 nav-but">
+          <a class="nav-link" href="/" id="nav-but">Home <span class="sr-only" >(current)</span></a>
+        </li>
+        <li class="nav-item active ml-3 nav-but">
+          <a class="nav-link" href="{% url 'moviess:movies' %} " id="nav-but">Movies</a>
+        </li>
+        <li class="nav-item active ml-3 nav-but">
+          <a class="nav-link" href="{% url 'moviess:actors' %}" id="nav-but">Actors</a>
+        </li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse  " id="" style="margin-left:900px;">
+      <ul class="navbar-nav">
+        <li class="nav-item active ml-3 nav-but" >
+          <a class="nav-link" href="{% url 'account:register' %}" id="nav-but">Register <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active ml-3 nav-but" >
+          <a class="nav-link" href="{% url 'account:sign_out' %}" id="nav-but">Logout</a>
+        </li>
+        <li class="nav-item active ml-3 nav-but" >
+          <a class="nav-link" href="{% url 'account:sign_in' %}" id="nav-but">Login</a>
+        </li>
+      </ul>
+    </div>
+
+
+  </nav>
