@@ -20,12 +20,12 @@ def movies(request):
         if (i.title.title):
 
           if (str(i.title.title) in str(film_list2)):
-            print("burdayım")
+            print("")
           else:
               film_list.append(i)
               film_list2.append(i.title.title)
         else:
-            print("elsedeyim")
+            
             film_list.append(i)
             film_list2.append(i.title.title)
     for i in films:
@@ -52,7 +52,7 @@ def actor_detail(request,slug):
         film_list=Film.objects.filter(Cast=i)
     films_lists=[]
     for a in film_list:
-        print(a)
+      
         films_lists.append(a)   
 
     context={"actors":actors,"films_lists":films_lists}
@@ -104,10 +104,6 @@ def addRate(request):
     film=Film.objects.get(title=titles)
     users=request.user
     rates=Film_rate.objects.create(title=film,user=users,rate=rate,avg_rate=avg)
-    print('film:',film)
-    print('rate:', rate)
-    print('user:', user)
-    print('rates:', rates)
-    print('avg:', avg)
+
    
     return JsonResponse('Item was added', safe=False)

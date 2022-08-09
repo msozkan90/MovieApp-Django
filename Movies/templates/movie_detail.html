@@ -21,63 +21,76 @@ border: #E2B616 2px solid;
 .starbar{
 color: #E2B616;
 
-
 }
 .starbar :hover{
   color: #E2B616;
   fill: #E2B616;
 }
 
-
-
-
-
 </style>
 {% endblock %}
 {% block body %} 
 
 <div class="container">
-
+<div class="row">
 
 {% for film in  films %}
-
-        <div class="col-lg-4 mb-3 film_card " >
-          <a id="image" href="">
-          <div class="m-card-cover">
-            <img class="movie_detail"   src="{% static  film.imageURL %}">
+<div class="col-md-3">
+          <div  id="movie_info">
+          <h6><strong>{{film.title}}</strong></h6>
+          <h6><strong>Rates:{{film.rate}}</strong></h6>
+          <h6><strong>Category: {{film.category.all.0}}</strong></h6>
+                  <div class="rating_rate"> <h6>
+                        <strong>Rating  </strong> 
+                        <i class="fas fa-star "></i>
+                        <div  id="rating_value">{{rate_avg}}
+                        </div>( {{length}} )</h6>
+                      <h6 id="rating_total"></h6>
+                  </div>
+          <br>
+          <h6><strong>Rate </strong></h6>
+          <a href="#"  class="starbar" data-product="1" data-film="{{film.title}}"  data-user="{{user}}" data-rate="{{rate_avg}}"> <i class="far fa-star" ></i></a>
+          <a href="#"  class="starbar" data-product="2" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
+          <a href="#"  class="starbar" data-product="3" data-film="{{film.title}}"  data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
+          <a href="#"  class="starbar" data-product="4" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
+          <a href="#"  class="starbar" data-product="5" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
+          <a href="#"  class="starbar" data-product="6" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
+          <a href="#"  class="starbar" data-product="7" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
+          <a href="#"  class="starbar" data-product="8" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star" ></i></a>
+          <a href="#"  class="starbar" data-product="9" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star" ></i></a>
+          <a href="#"  class="starbar" data-product="10" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star" ></i></a>
           </div>
-        </a> 
-        </div>
+  </div>
 
 
 
-    <div class="movie_info" id="movie_info">
-    <h6><strong>{{film.title}}</strong></h6>
-    <h6><strong>Rates:{{film.rate}}</strong></h6>
-    <h6><strong>Category: {{film.category.all.0}}</strong></h6>
-    <div class="rating_rate"> <h6><strong>Rating  </strong>  <i class="fas fa-star "></i><div  id="rating_value">{{rate_avg}}</div>( {{length}} )</h6>
-     <h6 id="rating_total"></h6></div>
-    <br>
-    <h6><strong>Rate </strong></h6>
-      
-    <a href="#"  class="starbar" data-product="1" data-film="{{film.title}}"  data-user="{{user}}" data-rate="{{rate_avg}}"> <i class="far fa-star" ></i></a>
-    <a href="#"  class="starbar" data-product="2" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
-    <a href="#"  class="starbar" data-product="3" data-film="{{film.title}}"  data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
-    <a href="#"  class="starbar" data-product="4" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
-    <a href="#"  class="starbar" data-product="5" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
-    <a href="#"  class="starbar" data-product="6" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
-    <a href="#"  class="starbar" data-product="7" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star"></i></a>
-    <a href="#"  class="starbar" data-product="8" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star" ></i></a>
-    <a href="#"  class="starbar" data-product="9" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star" ></i></a>
-    <a href="#"  class="starbar" data-product="10" data-film="{{film.title}}" data-user="{{user}}" data-rate="{{rate_avg}}"><i class="far fa-star" ></i></a>
-
-
-      </div>
+    <div class="col-md-9">
+          <div class=" mb-3" >
+              <a  href="">
+                <div class="m-card-cover">
+                  <img  class="movie_d"  src="{% static  film.imageURL %}">
+                </div>
+              </a> 
+          </div>
+    </div>
 {% endfor %}
+</div>
 </div>
 
 
-<div class="container">
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" >
 <table class="table table-dark">
     <thead>
       <tr>
@@ -90,10 +103,7 @@ color: #E2B616;
     <tbody>
         {% for film in  films %}
         {% for actor_list in  actor_lists %}
-       
-        
-
-
+   
         <tr class="name_list">
           
           <th > <a id="image" href="{% url 'moviess:actors_detail' actor_list.slug %}"> <img class="thumbnail" id="image"   src="{% static  actor_list.imageURL %}"></a></th>
@@ -108,7 +118,10 @@ color: #E2B616;
 
     </tbody>
   </table>
+
 </div>
+
+
 {% endblock  %}
 
 {% block js_files %}

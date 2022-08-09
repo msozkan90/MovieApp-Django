@@ -8,21 +8,52 @@
 <br>
 <br>
 <div class="container">
-<h3>Register</h3>
-<br><br>
-<div class="register">
-    
-    <form action="{%url 'account:register' %}"  method="post"class="register  w-50" id="form-control" style="height: 970px;">  
-        {% csrf_token %}
-        <div href=""class="bg-warning w-100 "> <strong>Registration Form</strong> </div> 
-        <div class="col-lg-6 r_form">
-        
-        {{form}}
-        <br>
-        <button class="btn btn-danger" id="r-button" type="submit">Register</button>
-        </div>
-    </form>
-</div>
-</div>
 
+<br><br>
+<div class="row">
+    <div class="col-md-3"></div>
+
+
+<div class="col-md-6">
+    <form action="{%url 'account:register' %}" method="post" class="" >  
+        {% csrf_token %}
+        <div  class="bg-dark text-center p-2 mb-3"> <strong>Registration Form</strong> </div> 
+        
+     
+    <label for="id_username">Username:</label>   
+      <input type="text" name="username" class="form-control" maxlength="150" autofocus="" required="" id="id_username">
+      
+        <br>
+     
+    <label for="id_email">Email:</label>
+      <input type="email" name="email" class="form-control" required="" id="id_email">
+    
+    <label for="id_password1">Password:</label>
+    
+      <input type="password" name="password1" class="form-control" autocomplete="new-password" required="" id="id_password1">
+      
+        <br>
+    <label for="id_password2">Password confirmation:</label>
+      <input type="password" name="password2" class="form-control" autocomplete="new-password" required="" id="id_password2">
+        <br>
+        <button class="btn btn-danger btn-block"  type="submit">Register</button>
+    
+    </form>
+
+</div>
+</div>
+</div>
 {% endblock  %}
+
+
+{% comment %} 
+<form action="{%url 'account:register' %}"  method="post"class="register  w-50" id="form-control" style="height: 970px;">  
+    {% csrf_token %}
+    <div href=""class="bg-warning w-100 "> <strong>Registration Form</strong> </div> 
+    <div class="col-lg-6 r_form">
+    
+    {{form}}
+    <br>
+    <button class="btn btn-danger" id="r-button" type="submit">Register</button>
+    </div>
+</form> {% endcomment %}

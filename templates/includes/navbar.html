@@ -18,15 +18,20 @@
     </div>
     <div class="collapse navbar-collapse  " id="" style="margin-left:900px;">
       <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+        <li class="nav-item active ml-3 nav-but" >
+          <a class="nav-link" href="{% url 'account:sign_out' %}" id="nav-but">Logout</a>
+        </li>
+        {% else %}
         <li class="nav-item active ml-3 nav-but" >
           <a class="nav-link" href="{% url 'account:register' %}" id="nav-but">Register <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active ml-3 nav-but" >
-          <a class="nav-link" href="{% url 'account:sign_out' %}" id="nav-but">Logout</a>
-        </li>
-        <li class="nav-item active ml-3 nav-but" >
           <a class="nav-link" href="{% url 'account:sign_in' %}" id="nav-but">Login</a>
         </li>
+
+
+        {% endif %}
       </ul>
     </div>
 

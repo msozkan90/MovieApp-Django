@@ -6,39 +6,8 @@
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <style>
 
-.actor_detail{
-    background-color: rgba(255, 215, 223, 0.651);
-    display: inline-block;
-    padding:100px;
-    padding-top: 10px;
-    width: 1000px;
-    margin-left: 300px;
-    height: 500px;
-    border-radius: 5px;
-   
-}
 
-#actor_card{
-    background-color: rgb(218, 217, 216);
-    position: relative !important;
-    max-width: 1200px;
-    border: 2px solid black;
-    border-radius: 5px;
-}
-#images{
-    width: 300px;
-    height: 500px;
-    position: absolute;
-    top: 175px;
-    border: black 1px solid;
-    border-radius: 5px;
-   
 
-}
-#image{
-    height: 100px;
-    width: 80px;
-}
     </style>
 {% endblock %}
 {% block body %} 
@@ -49,26 +18,28 @@
 
 {% for actor in  actors %}
    
-    <div class=" film_card" >
-            <a  href=""> <img class="" id="images" src="{% static  actor.imageURL %}"></a> 
-        </div>
-        <div class="actor_detail">
+<div class="row">
+    <div class="col-md-3">
+            <a  href=""> <img class="movie_d"  src="{% static  actor.imageURL %}"></a> 
+    </div>
+
+
+    <div class="col-md-9">
+        <div class="actor_d">
                 <h5><strong>{{actor.name}}</strong></h5>
                 <br>
                 <h5><strong>Age:{{actor.age}}</strong></h5>
                 <br>
                 <h5><strong>Gender: {{actor.gender}}</strong></h5>
                 <br>
-                <h5 class="deneme"><strong>Biography: {{actor.biography}}</strong></h5>
-                <br>
+                <h5 ><strong>Biography: {{actor.biography}}</strong></h5>
+                <br>          
+        </div> 
+    </div>
 
-                
-                
-        </div>     
-         
-        <br>
-        <br><br><br>
-        <table class="table table-dark">
+    </div>
+
+        <table class="table table-dark mt-5">
             <thead>
               <tr>
                 <th scope="col"></th>

@@ -12,12 +12,12 @@
 <br>
 <br>
 <div class="container">
-<h3>Home Page</h3>
+
 
 <div class="col-md-6" >
 
 
-        <a class="card-link" href="" id="adv">  <img class="card-img-top" id="adv" src="" alt=""></a>
+        <a class="card-link" href="" id="adv">  <img class="card-img-top" id="adv" src="https://donanimgunlugu.com/wp-content/upload/2018/11/breaking-bad-filmi.jpg" alt=""></a>
 
  
 
@@ -41,10 +41,7 @@ var adv=[
 		image :"https://m.media-amazon.com/images/M/MV5BMDNkOTE4NDQtMTNmYi00MWE0LWE4ZTktYTc0NzhhNWIzNzJiXkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_.jpg",
 		link : "",
 	},
-	{
-		image : "https://m.media-amazon.com/images/M/MV5BOWNlMjBjZTUtNThiNy00OTkxLThiZTQtNTEyZDliZTM3N2Q0XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_FMjpg_UX1000_.jpg",
-		link : "",
-	},
+
 	{
 		image : "https://upload.wikimedia.org/wikipedia/tr/1/1f/Kurtlar-vadisi-eski.jpg",
 		link : "",
@@ -59,11 +56,9 @@ var index = 1;
 var slaytCount = adv.length;
 var interval;
 
-var settings={
-	duration:"2500"
-}
-init(settings);
-function init(settings){
+
+init();
+function init(){
 	interval=setInterval(function(){
 	if(slaytCount == index+1){
 		index = -1;
@@ -72,7 +67,7 @@ function init(settings){
 
 	index++;
 showSlide(index);
-},settings.duration)
+},2000)
 }
 
 

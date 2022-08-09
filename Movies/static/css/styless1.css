@@ -28,82 +28,31 @@
     display: inline-block;
     width: 250px;
 }
-.movie_detail{
-  padding-top: 0%;
-  width: 1200px;
-  height: 500px;
+.movie_d{
+  height: 500px!important;
+  width: 100%;
   border-radius: 7px;
 }
 #movie_info{
-  position: absolute;
-  top: 100px;
-  left: 20px;
-  background-color: rgb(29, 29, 29);
+
+  background-color: rgb(77, 77, 77);
   color: white;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
-  padding-top: 150px;
-  padding-bottom: 150px;
-}
-form.register {
-  margin-left: 300px;
-}
-#form-control {
-  border: solid black 1.5px;
-  box-shadow: hsl(0, 0%, 80%) 0 0 16px;
-  background-color: rgb(253, 242, 242);
-  border-radius: 3px;
-  padding: 0px;
-  position: relative;
-  height: 780px;
-}
-#r-button {
-  width: 55%;
-  margin-top: 20px;
-  position: absolute;
-  left: 350px;
-  border-radius: 5px;
-}
-.r_form {
-  padding-left: 55px;
-}
-div.bg-warning {
-  margin: 0px;
-  padding: 0px;
-  height: 40px;
-  text-align: center;
-}
-.form-inline {
-  margin-right: 25px;
-  margin-left: 25px;
-  margin-top: 6px;
-}
-.btn-warning {
-  margin-bottom: 4px;
-  margin-right: 4px;
-  border-radius: 5px;
+  padding-top: 140px;
+  padding-bottom: 140px;
 }
 
-form label {
-  display: block;
-  font-weight: 900;
-  font-size: 16px;
-
-  margin-left: 10px;
+.actor_d{
+  background-color: rgb(77, 77, 77);
+  color: white;
+  padding: 14px;
+  border-radius: 10px;
+  padding-top: 130px;
+  padding-bottom: 130px;
 }
-form input {
-  width: 450px;
-  height: 40px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
-form span {
-  opacity: 0.5;
-  margin-left: 10px;
-}
-form li {
-  opacity: 0.5;
-  margin-left: 10px;
+.table-dark{
+  background-color: rgb(77, 77, 77);
 }
 #messages {
   padding: 15px;
@@ -114,9 +63,8 @@ form li {
 }
 .nav-but{
   width: 80px;
-  height: 45px;
+  height: 40px;
   background-color: #087637;
-  border: 2px solid black;
   border-radius: 4px;
   text-align: center;
   color: aliceblue;
@@ -125,7 +73,7 @@ form li {
 #nav-but:hover{
 
   opacity: 0.8;
-
+  border-radius: 4px;
   border:   #087637!important;
   background-color: rgb(255, 255, 255);
   color: #087637!important;
